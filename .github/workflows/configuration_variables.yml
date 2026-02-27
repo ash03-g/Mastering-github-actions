@@ -7,25 +7,25 @@ env:
   cloud: google-cloud
 
 jobs:
-  greeting_job:
+  greeting_prod:
     runs-on: ubuntu-latest
     environment: production
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello to Vishal"
+      - name: "Say Hello to Vishal prod"
         run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.BIG_SHOW}}!"
         env:
           First_Name: Vishal
 
  jobs:
-  greeting_job:
+  greeting_dev:
     runs-on: ubuntu-latest
     environment: dev
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello to Vishal"
+      - name: "Say Hello to Vishal dev"
         run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.JOHN_CENA}}!"
         env:
           First_Name: Vishal
