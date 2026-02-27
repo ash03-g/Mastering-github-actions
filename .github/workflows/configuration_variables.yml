@@ -17,3 +17,15 @@ jobs:
         run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.BIG_SHOW}}!"
         env:
           First_Name: Vishal
+
+ jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    environment: dev
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Say Hello to Vishal"
+        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.JOHN_CENA}}!"
+        env:
+          First_Name: Vishal
