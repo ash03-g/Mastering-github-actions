@@ -1,7 +1,7 @@
 name: Testing configuration Variables
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 env:
   cloud: google-cloud
@@ -13,19 +13,18 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello to Vishal prod"
-        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.BIG_SHOW}}!"
+      - name: Say Hello to Vishal (Prod)
+        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{ vars.BIG_SHOW }}!"
         env:
           First_Name: Vishal
 
- jobs:
   greeting_dev:
     runs-on: ubuntu-latest
     environment: dev
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello to Vishal dev"
-        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{vars.JOHN_CENA}}!"
+      - name: Say Hello to Vishal (Dev)
+        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }} ${{ vars.JOHN_CENA }}!"
         env:
           First_Name: Vishal
