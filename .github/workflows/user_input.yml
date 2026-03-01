@@ -19,7 +19,7 @@ on:
         # Default value if no value is explicitly provided.
         default: '0'
         # Input has to be provided for the workflow to run.
-        required: true
+        required: false
         # The data type of the input.
 
 jobs:
